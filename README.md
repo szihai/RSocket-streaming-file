@@ -23,8 +23,10 @@ Under the `/client` folder is the sender code. You again can modify the ip and p
 And to run this client, use the command `./client f *file-name* `.
 
 ## RSocket
-[RSocket](http://rsocket.io) is an application protocol providing [Reactive Streams](https://www.reactivemanifesto.org/) semantics. As the reactive menifesto points out, resiliency is a key feature. When the network fluctuates, the protocol will try to stay put and keep the file transmission going. So such a simple program can actually withstand production use.
+[RSocket](http://rsocket.io) is an application protocol providing [Reactive Streams](https://www.reactivemanifesto.org/) semantics. As the reactive menifesto points out, resiliency is a key feature. When the network fluctuates, the protocol will try to stay put and keep the file transmission going. So such a simple program can actually withstand production use. 
 
 ## Improvement
 As a user facing utility, this is a demo. It has many areas for improvement. Feel free to modify it as you wish. However, the RSocket protocol has made the mechanism steady and robust. 
+* For large files
+The file size limit is caused by Golang's default `ReadFile` and `WriteFile`. If you need to process larger files, please find another utility to use. *But* that's not caused by RSocket.
 
