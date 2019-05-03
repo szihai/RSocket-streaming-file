@@ -27,6 +27,6 @@ And to run this client, use the command `./client f *file-name* `.
 
 ## Improvement
 As a user facing utility, this is a demo. It has many areas for improvement. Feel free to modify it as you wish. However, the RSocket protocol has made the mechanism steady and robust. 
-* For large files
+* For large files   
 The file size limit is caused by Golang's default `ReadFile` and `WriteFile`. If you need to process larger files, please find another utility to use. *But* that's not caused by RSocket.
 
