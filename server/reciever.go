@@ -16,7 +16,7 @@ func main() {
 	app.Usage = "recieve file"
 	app.Action = func(c *cli.Context) error {
 		err := rsocket.Receive().
-			Acceptor(func(setup payload.SetupPayload, sendingSocket rsocket.RSocket) rsocket.RSocket {
+			Acceptor(func(setup payload.SetupPayload, sendingSocket rsocket.EnhancedRSocket) rsocket.RSocket {
 				fileName, _ := setup.MetadataUTF8()
 				// bind responder
 				return rsocket.NewAbstractSocket(
